@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import UserCard from './components/userCard';
+// import './components/userCardStyles.css'
 
 class App extends Component {
   constructor(props) {

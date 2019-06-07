@@ -5,8 +5,8 @@ function UserCard (props) {
 if (!props.hide) {
    data = (
     <div>
-      <h3>{props.firstName + " " + props.lastName}</h3>
-      <p>{props.phone}</p>
+      <h3 className = "name">{props.firstName + " " + props.lastName}</h3>
+      <p className = "phoneNumber">{props.phone}</p>
     </div>
   )
 } else data = null;
@@ -18,10 +18,10 @@ if (props.hide) {
 
 
   return (
-    <div>
-      <img src={props.picture}/>
+    <div className= "main">
+      <img className = "picture" src={props.picture}/>
       {data}
-      <button onClick = {props.onClick}>{buttonText}</button>
+      <button className = "button" onClick = {props.onClick}>{buttonText}</button>
     </div>
   )
 }
