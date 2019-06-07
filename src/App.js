@@ -1,37 +1,6 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
-
-function UserCard (props) {
-  let emailInfo = (
-  <div>
-    <span>{props.user.email}</span>
-  </div>
-  );
-
-  let buttonText;
-
-  if (hide) {
-    buttonText = 'Show Details'
-  } else {
-    buttonText = 'Hide Details'
-  }
-
-  return (
-  <div>
-    <img className="pic" src={props.user.picture.thumbnail}/>
-    <div>
-      <div>
-        <span>{props.user.name.first}</span>
-        {' '}
-        <span>{props.user.name.last}</span>
-      </div>
-      {props.hide === false ? emailInfo: emailInfo}
-    </div>
-    <button onClick = {props.onClick}>Show Details</button>
-  </div>
-  )}
-
+import UserCard from './components/userCard';
 
 class App extends Component {
   constructor(props) {
@@ -53,9 +22,10 @@ class App extends Component {
     })
   }
 
-  onClick = (event) => {
+  onClick = () => {
+    let opposite = this.state.isHidden;
     this.setState({
-      isHidden: false
+      isHidden: !opposite
     })
   };
 
@@ -64,8 +34,11 @@ class App extends Component {
       <div className="App">
         {this.state.results.map((user, index) => 
         <UserCard 
-          key = {index} 
-          user={user} 
+          key = {index}
+          firstName = {user.name.first}
+          lastName = {user.name.last}
+          picture = {user.picture.thumbnail}
+          phone = {user.cell}
           onClick = {this.onClick} 
           hide ={this.state.isHidden}/>
         )}
