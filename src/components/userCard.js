@@ -1,4 +1,5 @@
 import React from 'react';
+import "./userCardStyles.css"
 
 function UserCard (props) {
   let data;

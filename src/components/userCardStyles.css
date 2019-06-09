@@ -1,5 +1,30 @@
 .main {
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px gray;
+    margin: 20px auto;
+    width: 25%;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: lightblue;
+}
+
+.picture {
+    width: 150px;
+    height: 150px;
+    margin: 50px auto 10px auto;
     border: 1px solid black;
     box-shadow: 2px 2px 2px gray;
-    margin: 5px;
+}
+
+.button {
+    width: 30%;
+    padding: 5px 0px;
+    margin: 0px auto;
+}
+
+.button:hover {
+    background-color: black;
+    color: white;
 }

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
 import UserCard from './components/userCard';
-// import './components/userCardStyles.css'
 
 class App extends Component {
   constructor(props) {
@@ -38,7 +37,7 @@ class App extends Component {
           key = {index}
           firstName = {user.name.first}
           lastName = {user.name.last}
-          picture = {user.picture.thumbnail}
+          picture = {user.picture.large}
           phone = {user.cell}
           onClick = {this.onClick} 
           hide ={this.state.isHidden}/>
